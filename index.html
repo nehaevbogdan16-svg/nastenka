@@ -1,0 +1,126 @@
+ <!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-color" content="#fff0f3">
+
+<title>02:17</title>
+
+<link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+<div class="hearts" aria-hidden="true">
+
+    <span>♡</span>
+
+    <span>♥</span>
+
+    <span>♡</span>
+
+    <span>♥</span>
+
+    <span>♡</span>
+
+</div>
+
+<main class="card">
+
+    <div class="sun">♡</div>
+
+    <div class="kicker">маленький сюрприз</div>
+
+
+
+
+    <p class="question">
+
+        Но сначала введи пароль...
+
+    </p>
+
+    <form id="passwordForm">
+
+        <input type="password"
+               id="password"
+               placeholder="Пароль это ты"
+               autocomplete="off"
+               required>
+
+        <button type="submit">
+
+            Открыть
+
+        </button>
+
+    </form>
+
+    <p id="message" class="message"></p>
+
+    <div class="bottom-text">
+
+        Только для тебя
+
+    </div>
+
+    <div class="bottom-text">
+
+        02:17
+
+    </div>
+
+</main>
+
+<script>
+
+const correctPassword = "20.01.2010";
+
+const form = document.getElementById("passwordForm");
+
+const input = document.getElementById("password");
+
+const message = document.getElementById("message");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    if (input.value.trim() === correctPassword) {
+
+        message.textContent = "Правильно! Для тебя открыто кое-что особенное ♥";
+
+        message.className = "message success";
+
+        setTimeout(() => {
+
+            window.location.href = "letter.html";
+
+        }, 900);
+
+    } else {
+
+        message.textContent = "Кажется, пароль немного не тот. Попробуй ещё раз ";
+
+        message.className = "message error";
+
+        input.value = "";
+
+        input.focus();
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

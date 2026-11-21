@@ -1,0 +1,501 @@
+:root {
+ --rose: #a45e73;
+ --muted: #906a73;
+ --pink: #d98c9d;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+ margin: 0;
+ min-height: 100vh;
+ padding: 22px 14px 48px;
+ background:
+  radial-gradient(circle at 12% 12%, #fff9df 0 7%, transparent 27%),
+  radial-gradient(circle at 90% 85%, #ffdce7 0 9%, transparent 30%),
+  linear-gradient(135deg, #fff8f0, #ffeaf1 58%, #fff2df);
+ color: #704b55;
+ font-family: Georgia, "Times New Roman", serif;
+}
+
+.page {
+ width: min(1120px, 100%);
+ margin: auto;
+ text-align: center;
+}
+
+.heading {
+ padding: 8px 0 18px;
+}
+
+.sun {
+ font-size: 40px;
+ display: block;
+ animation: float 3s ease-in-out infinite;
+}
+
+.kicker {
+ font: 700 10px Arial, sans-serif;
+ letter-spacing: .25em;
+ text-transform: uppercase;
+ color: #c58b91;
+ margin: 10px 0;
+}
+
+h1 {
+ font-size: clamp(32px, 6vw, 49px);
+ font-weight: 500;
+ color: var(--rose);
+ margin: 0 0 8px;
+}
+
+.subtitle {
+ font-size: 16px;
+ line-height: 1.55;
+ color: var(--muted);
+ margin: 0 auto;
+ max-width: 560px;
+}
+
+.stage {
+ position: relative;
+ width: 100%;
+ height: clamp(430px, 55vw, 610px);
+ margin: 16px auto 24px;
+ isolation: isolate;
+}
+
+.collage {
+ position: absolute;
+ inset: 0;
+ overflow: hidden;
+ border-radius: 28px;
+ pointer-events: none;
+}
+
+.photo {
+ position: absolute;
+ width: clamp(105px, 16vw, 185px);
+ height: clamp(130px, 19vw, 220px);
+ object-fit: cover;
+ border: 5px solid rgba(255, 255, 255, .96);
+ border-radius: 15px;
+ box-shadow: 0 12px 32px #7f4d5a30;
+ opacity: 0;
+ animation: photoAppear .8s ease forwards;
+ will-change: opacity, transform;
+}
+
+
+.video-frame {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(58%, 650px);
+
+    aspect-ratio: 16 / 9;
+
+    background: #30242a;
+
+    border: 7px solid rgba(255,255,255,.97);
+
+    border-radius: 22px;
+
+    box-shadow: 0 22px 60px #75495650;
+
+    overflow: hidden;
+
+}
+
+.video-frame video {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    background: #241b20;
+
+}
+
+video {
+ display: block;
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+ background: #241b20;
+}
+
+.video-placeholder {
+ position: absolute;
+ inset: 0;
+ display: grid;
+ place-items: center;
+ padding: 18px;
+ color: #ffeef2;
+ text-align: center;
+ background: linear-gradient(145deg, #795263, #bd8294);
+}
+
+.video-placeholder strong {
+ display: block;
+ font-size: clamp(18px, 3vw, 27px);
+ font-weight: 500;
+ margin-bottom: 8px;
+}
+
+.video-placeholder span {
+ font: 12px/1.5 Arial, sans-serif;
+ opacity: .9;
+}
+
+
+
+.note {
+ max-width: 720px;
+ margin: 0 auto;
+ padding: 30px clamp(20px, 5vw, 46px);
+ background: rgba(255, 255, 255, .84);
+ border: 1px solid white;
+ border-radius: 26px;
+ box-shadow: 0 18px 55px #995b6c17;
+ text-align: left;
+ font-size: 16px;
+ line-height: 1.85;
+}
+
+.note p {
+ margin: 0 0 14px;
+}
+
+.note p:last-child {
+ margin-bottom: 0;
+}
+
+.sign {
+ text-align: center;
+ color: #b46d80;
+ font-style: italic;
+ margin-top: 22px !important;
+}
+
+.footer {
+ margin: 20px 0 0;
+ font: 11px Arial, sans-serif;
+ letter-spacing: .08em;
+ color: #c49aa2;
+}
+
+
+
+@keyframes photoAppear {
+ 0% {
+  opacity: 0;
+  transform: translateY(15px) scale(.9) rotate(var(--rotation));
+ }
+
+ 100% {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(var(--rotation));
+ }
+}
+
+@keyframes float {
+ 0%, 100% {
+  transform: translateY(0) rotate(-5deg);
+ }
+
+ 50% {
+  transform: translateY(-8px) rotate(5deg);
+ }
+}
+
+
+@media (max-width: 600px) {
+ body {
+  padding: 16px 9px 34px;
+ }
+
+ .stage {
+  height: 490px;
+ }
+
+ .photo {
+  width: clamp(94px, 27vw, 145px);
+  height: clamp(116px, 33vw, 170px);
+  border-width: 4px;
+ }
+
+ .video-frame {
+  width: 82%;
+  border-width: 5px;
+  border-radius: 15px;
+ }
+
+ .note {
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 24px 20px;
+ }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+ .sun,
+ .photo {
+  animation: none !important;
+  opacity: 1 !important;
+ }
+}
+/* Заголовок конвертов */
+
+
+
+.letters-section {
+    max-width: 900px;
+    margin: 45px auto;
+    text-align: center;
+}
+
+
+
+.letters-heading {
+    margin-bottom: 30px;
+}
+
+
+
+    .letters-heading h2 {
+        color: #a45e73;
+        font-size: 34px;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+
+
+
+    .letters-heading p {
+        color: #906a73;
+        font-size: 15px;
+    }
+
+
+
+/* Сетка конвертов */
+
+
+
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 25px;
+    padding: 15px;
+}
+
+
+
+.envelope-card {
+    position: relative;
+    height: 300px;
+}
+
+
+
+/* Сам конверт */
+
+
+
+.envelope {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 330px;
+    height: 190px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    overflow: visible;
+}
+
+
+
+/* Задняя часть */
+
+
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, #e8b8c3, #d995a7);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px #a45e7325;
+    z-index: 1;
+}
+
+
+
+/* Лист бумаги */
+
+
+
+.letter-paper {
+    position: absolute;
+    left: 7%;
+    bottom: 15px;
+    width: 86%;
+    min-height: 150px;
+    padding: 18px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffdf9;
+    border: 1px solid #f2dfe1;
+    border-radius: 7px;
+    color: #805762;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    line-height: 1.65;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(35px);
+    transition: transform .8s ease, opacity .6s ease;
+    z-index: 2;
+}
+
+
+
+/* Передняя часть конверта */
+
+
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, #d995a7, #c47f94);
+    clip-path: polygon( 0 0, 50% 58%, 100% 0, 100% 100%, 0 100% );
+    border-radius: 0 0 8px 8px;
+    z-index: 3;
+}
+
+
+
+/* Клапан конверта */
+
+
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #e8b8c3;
+    clip-path: polygon( 0 0, 100% 0, 50% 65% );
+    transform-origin: top;
+    transition: transform .65s ease;
+    z-index: 4;
+}
+
+
+
+/* Надпись */
+
+
+
+.envelope-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    z-index: 5;
+    transition: opacity .3s ease;
+}
+
+
+
+/* Открытое состояние */
+
+
+
+.envelope.is-open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+
+
+.envelope.is-open .letter-paper {
+    opacity: 1;
+    transform: translateY(-115px);
+    z-index: 5;
+}
+
+
+
+.envelope.is-open .envelope-label {
+    opacity: 0;
+}
+
+
+
+/* Наведение */
+
+
+
+.envelope:not(.is-open):hover {
+    filter: brightness(1.04);
+}
+
+
+
+/* Телефоны */
+
+
+
+@media (max-width: 600px) {
+
+
+
+    .letters-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+
+    .envelope-card {
+        height: 300px;
+    }
+
+
+
+    .letters-heading h2 {
+        font-size: 29px;
+    }
+
+
+
+    .envelope {
+        width: 95%;
+    }
+}
