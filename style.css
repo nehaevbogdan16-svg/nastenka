@@ -264,7 +264,7 @@ video {
   opacity: 1 !important;
  }
 }
-/* Заголовок конвертов */
+/* Г‡Г ГЈГ®Г«Г®ГўГ®ГЄ ГЄГ®Г­ГўГҐГ°ГІГ®Гў */
 
 
 
@@ -298,7 +298,7 @@ video {
 
 
 
-/* Сетка конвертов */
+/* Г‘ГҐГІГЄГ  ГЄГ®Г­ГўГҐГ°ГІГ®Гў */
 
 
 
@@ -318,7 +318,7 @@ video {
 
 
 
-/* Сам конверт */
+/* Г‘Г Г¬ ГЄГ®Г­ГўГҐГ°ГІ */
 
 
 
@@ -339,7 +339,7 @@ video {
 
 
 
-/* Задняя часть */
+/* Г‡Г Г¤Г­ГїГї Г·Г Г±ГІГј */
 
 
 
@@ -354,7 +354,7 @@ video {
 
 
 
-/* Лист бумаги */
+/* Г‹ГЁГ±ГІ ГЎГіГ¬Г ГЈГЁ */
 
 
 
@@ -384,7 +384,7 @@ video {
 
 
 
-/* Передняя часть конверта */
+/* ГЏГҐГ°ГҐГ¤Г­ГїГї Г·Г Г±ГІГј ГЄГ®Г­ГўГҐГ°ГІГ  */
 
 
 
@@ -399,7 +399,7 @@ video {
 
 
 
-/* Клапан конверта */
+/* ГЉГ«Г ГЇГ Г­ ГЄГ®Г­ГўГҐГ°ГІГ  */
 
 
 
@@ -415,7 +415,7 @@ video {
 
 
 
-/* Надпись */
+/* ГЌГ Г¤ГЇГЁГ±Гј */
 
 
 
@@ -433,7 +433,7 @@ video {
 
 
 
-/* Открытое состояние */
+/* ГЋГІГЄГ°Г»ГІГ®ГҐ Г±Г®Г±ГІГ®ГїГ­ГЁГҐ */
 
 
 
@@ -458,7 +458,7 @@ video {
 
 
 
-/* Наведение */
+/* ГЌГ ГўГҐГ¤ГҐГ­ГЁГҐ */
 
 
 
@@ -468,7 +468,7 @@ video {
 
 
 
-/* Телефоны */
+/* Г’ГҐГ«ГҐГґГ®Г­Г» */
 
 
 
@@ -498,4 +498,328 @@ video {
     .envelope {
         width: 95%;
     }
+}
+
+/* ==============================
+
+   РЎРўР РђРќРР¦Рђ РЎР®Р РџР РР—РћР’
+
+============================== */
+
+.surprises-page {
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    background:
+
+        radial-gradient(circle at 10% 10%, #fff0f3, transparent 35%),
+
+        radial-gradient(circle at 90% 80%, #fce7ec, transparent 35%),
+
+        #fffaf7;
+
+}
+
+.surprises-container {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+/* Р—Р°РіРѕР»РѕРІРѕРє */
+
+.surprises-header {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 35px auto 55px;
+
+}
+
+.surprises-sun {
+
+    font-size: 48px;
+
+    margin-bottom: 15px;
+
+    animation: surpriseSun 4s ease-in-out infinite;
+
+}
+
+@keyframes surpriseSun {
+
+    0%, 100% {
+
+        transform: rotate(-8deg) scale(1);
+
+    }
+
+    50% {
+
+        transform: rotate(8deg) scale(1.08);
+
+    }
+
+}
+
+.surprises-header h1 {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(32px, 6vw, 48px);
+
+    font-weight: 500;
+
+    margin: 12px 0;
+
+}
+
+.surprises-header p {
+
+    color: #906a73;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+/* РЎРµС‚РєР° */
+
+.surprises-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+}
+
+/* РљР°СЂС‚РѕС‡РєРё */
+
+.surprise-card {
+
+    position: relative;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #f2dfe3;
+
+    border-radius: 22px;
+
+    box-shadow: 0 12px 35px rgba(164, 94, 115, 0.08);
+
+    transition:
+
+        transform 0.35s ease,
+
+        box-shadow 0.35s ease;
+
+}
+
+.surprise-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: 0 18px 40px rgba(164, 94, 115, 0.15);
+
+}
+
+/* РРєРѕРЅРєР° */
+
+.surprise-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+}
+
+/* РќРѕРјРµСЂ */
+
+.surprise-number {
+
+    color: #c58b9b;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+}
+
+/* РќР°Р·РІР°РЅРёРµ */
+
+.surprise-card h2 {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    font-weight: 500;
+
+    margin: 10px 0;
+
+}
+
+/* РћРїРёСЃР°РЅРёРµ */
+
+.surprise-card p {
+
+    min-height: 55px;
+
+    color: #987780;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+/* РљРЅРѕРїРєР° */
+
+.surprise-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 12px 25px;
+
+    color: white;
+
+    background: linear-gradient(135deg, #d99aaa, #bd788e);
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    box-shadow: 0 6px 18px rgba(189, 120, 142, 0.2);
+
+    transition:
+
+        transform 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+.surprise-button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow: 0 9px 22px rgba(189, 120, 142, 0.3);
+
+}
+
+.surprise-button span {
+
+    font-size: 17px;
+
+}
+
+/* РџРѕРґРІР°Р» */
+
+.surprises-footer {
+
+    text-align: center;
+
+    margin-top: 65px;
+
+    padding-bottom: 25px;
+
+}
+
+.surprises-footer p {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+
+}
+
+.back-link {
+
+    color: #b77c8e;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+.back-link:hover {
+
+    color: #8e5267;
+
+}
+
+/* РўРµР»РµС„РѕРЅС‹ */
+
+@media (max-width: 600px) {
+
+    .surprises-page {
+
+        padding: 20px 15px;
+
+    }
+
+    .surprises-header {
+
+        margin: 25px auto 35px;
+
+    }
+
+    .surprises-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+    .surprise-card {
+
+        padding: 30px 20px;
+
+    }
+
+    .surprises-footer {
+
+        margin-top: 45px;
+
+    }
+
 }
