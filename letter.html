@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f3">
+<title>Для Настёнки 🥰</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <header class="heading">
+            <span class="sun" aria-hidden="true">♡</span>
+
+        </header>
+
+        <section class="stage" aria-label="Видео в окружении фотографий">
+            <div class="collage" id="collage" aria-label="Фотографии"></div>
+            <div class="video-frame">
+
+                <video id="mainVideo" controls playsinline preload="metadata">
+
+                    <source src="./media/video/video.mp4" type="video/mp4">
+
+                    Твой браузер не поддерживает воспроизведение видео.
+
+                </video>
+                <div>
+                    <strong>02:17</strong>
+
+                </div>
+            </div>
+
+
+            </div>
+            </div>
+        </section>
+
+        <section class="note">
+            <p>Я правда верю, что у тебя всё получится. Поэтому никогда не сдавайся, смело иди к своей цели и не оглядывайся назад. Не позволяй никому переубеждать тебя или заставлять сомневаться в себе.</p>
+            <p>Радуйся жизни, улыбайся и свети ярче всех, словно маленькое солнышко! Ведь ты и есть самое настоящее солнышко. <span style="color:#d98c9d">♥</span></p>
+            <p>Ты самая большая умничка на свете, и я безумно горжусь тобой.</p>
+            <p>Хочу, чтобы ты никогда не забывала, какая ты замечательная.</p>
+
+            <p class="sign">02:17 для тебя ♥</p>
+        </section>
+
+        
+
+
+
+        </section>
+        <div class="footer">Ты заслуживаешь быть счастливой </div>
+        <div class="footer">02:17</div>
+    </main>
+
+    <script>
+        const photoFiles = [
+            "photo-01.jpg",
+            "photo-02.jpg",
+            "photo-03.jpg",
+            "photo-04.jpg",
+            "photo-05.jpg",
+            "photo-06.jpg",
+            "photo-07.jpg",
+            "photo-08.jpg",
+            "photo-09.jpg",
+            "photo-10.jpg",
+            "photo-11.jpg",
+            "photo-12.jpg"
+        ];
+
+        const positionsDesktop = [
+            [1, 4, -8], [20, 1, 6], [72, 2, -7], [86, 26, 8],
+            [1, 40, 6], [17, 69, -7], [78, 68, 6], [87, 46, -8],
+            [38, 1, -5], [59, 2, 8], [37, 74, 7], [59, 75, -6]
+        ];
+
+        const positionsMobile = [
+            [1, 2, -8], [69, 2, 7], [0, 37, 6], [73, 37, -7],
+            [3, 73, -5], [70, 73, 8], [34, 1, 5], [34, 79, -5],
+            [1, 19, 4], [74, 19, -4], [1, 55, -7], [74, 55, 6]
+        ];
+
+        function shuffleOnce(items) {
+            const result = [...items];
+
+            for (let i = result.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [result[i], result[j]] = [result[j], result[i]];
+            }
+
+            return result;
+        }
+
+        function buildCollage() {
+            const collage = document.getElementById("collage");
+            const mobile = window.matchMedia("(max-width:600px)").matches;
+            const positions = mobile ? positionsMobile : positionsDesktop;
+            const files = shuffleOnce(photoFiles).slice(0, positions.length);
+
+            files.forEach((file, index) => {
+                const [x, y, rotation] = positions[index];
+
+                const img = document.createElement("img");
+                img.className = "photo";
+                img.src = "media/photos/" + file;
+                img.alt = "Фотография";
+                img.loading = "eager";
+
+                img.style.left = x + "%";
+                img.style.top = y + "%";
+                img.style.setProperty("--rotation", rotation + "deg");
+                img.style.animationDelay = (index * 0.12) + "s";
+
+                img.onerror = () => img.remove();
+
+                collage.appendChild(img);
+            });
+        }
+
+        const video = document.getElementById("mainVideo");
+        const placeholder = document.getElementById("videoPlaceholder");
+
+        video.addEventListener("loadedmetadata", () => {
+            placeholder.hidden = true;
+        });
+
+        video.addEventListener("error", () => {
+            placeholder.hidden = false;
+        });
+
+        buildCollage();
+        document.querySelectorAll(".envelope").forEach(envelope => {
+
+
+
+            envelope.addEventListener("click", () => {
+
+
+
+                const isOpen = envelope.classList.toggle("is-open");
+
+
+
+                envelope.setAttribute("aria-expanded", isOpen);
+
+
+
+            });
+
+
+
+        });
+    </script>
+   
+</body>
+</html>
