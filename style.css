@@ -1152,3 +1152,128 @@ video {
     }
 
 }
+/* Мини-счётчик */
+
+.mini-countdown {
+
+    max-width: 420px;
+
+    margin: 25px auto;
+
+    padding: 20px 15px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #f2dfe3;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(164, 94, 115, 0.08);
+
+}
+
+.mini-countdown-title {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    margin-bottom: 18px;
+
+}
+
+.mini-countdown-timer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+}
+
+.mini-countdown-timer div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 48px;
+
+}
+
+.mini-countdown-timer strong {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    font-variant-numeric: tabular-nums;
+
+}
+
+.mini-countdown-timer span {
+
+    color: #bd8998;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+.mini-countdown-timer b {
+
+    color: #d99aaa;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    margin-top: -12px;
+
+}
+
+.mini-countdown-date {
+
+    color: #c58b9b;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-top: 17px;
+
+}
+
+@media (max-width: 380px) {
+
+    .mini-countdown-timer {
+
+        gap: 5px;
+
+    }
+
+    .mini-countdown-timer strong {
+
+        font-size: 25px;
+
+    }
+
+    .mini-countdown-timer div {
+
+        min-width: 42px;
+
+    }
+
+}
