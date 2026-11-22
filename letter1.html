@@ -50,7 +50,31 @@
         <section class="letters-section">
 
             <div class="letters-grid">
+    <div class="mini-countdown">
 
+    <div class="mini-countdown-title">До нашей встречи осталось ♡</div>
+
+    <div class="mini-countdown-timer">
+
+        <div><strong id="cd-days">00</strong><span>дней</span></div>
+
+        <b>:</b>
+
+        <div><strong id="cd-hours">00</strong><span>часов</span></div>
+
+        <b>:</b>
+
+        <div><strong id="cd-minutes">00</strong><span>минут</span></div>
+
+        <b>:</b>
+
+        <div><strong id="cd-seconds">00</strong><span>секунд</span></div>
+
+    </div>
+
+    <div class="mini-countdown-date">29.11.2026 · 02:17</div>
+
+</div>
                 <!-- Конверт 2 -->
 
                 <div class="envelope-card">
@@ -188,6 +212,49 @@
 
         });
     </script>
-   
+   <script>
+
+const countdownTarget = new Date("2026-11-28T23:17:00Z").getTime();
+
+function updateMiniCountdown() {
+
+    const diff = countdownTarget - Date.now();
+
+    const values = {
+
+        "cd-days": Math.floor(diff / 86400000),
+
+        "cd-hours": Math.floor((diff / 3600000) % 24),
+
+        "cd-minutes": Math.floor((diff / 60000) % 60),
+
+        "cd-seconds": Math.floor((diff / 1000) % 60)
+
+    };
+
+    for (const [id, value] of Object.entries(values)) {
+
+        document.getElementById(id).textContent =
+
+            String(Math.max(0, value)).padStart(2, "0");
+
+    }
+
+    if (diff <= 0) {
+
+        document.querySelector(".mini-countdown-title").textContent =
+
+            "Наш особенный момент настал! ❤️";
+
+    }
+
+}
+
+updateMiniCountdown();
+
+setInterval(updateMiniCountdown, 1000);
+
+</script>
+    
 </body>
 </html>
