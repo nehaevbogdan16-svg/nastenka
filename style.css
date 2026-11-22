@@ -823,3 +823,332 @@ video {
     }
 
 }
+/* ==============================
+
+   СТРАНИЦА ОБРАТНОГО ОТСЧЁТА
+
+============================== */
+
+.countdown-page {
+
+    min-height: 100vh;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(circle at 10% 10%, #fff0f3, transparent 35%),
+
+        radial-gradient(circle at 90% 80%, #fce7ec, transparent 35%),
+
+        #fffaf7;
+
+}
+
+.countdown-container {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+/* Солнце */
+
+.countdown-sun {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation: countdownSun 4s ease-in-out infinite;
+
+}
+
+@keyframes countdownSun {
+
+    0%, 100% {
+
+        transform: rotate(-8deg) scale(1);
+
+    }
+
+    50% {
+
+        transform: rotate(8deg) scale(1.08);
+
+    }
+
+}
+
+/* Заголовки */
+
+.countdown-kicker {
+
+    color: #c58b9b;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+
+}
+
+.countdown-container h1 {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 6vw, 46px);
+
+    font-weight: 500;
+
+    margin: 10px 0 20px;
+
+}
+
+.countdown-description {
+
+    max-width: 530px;
+
+    margin: 0 auto;
+
+    color: #906a73;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+}
+
+/* Дата */
+
+.countdown-date {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 35px 0 25px;
+
+    color: #b77c8e;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+.countdown-date-divider {
+
+    color: #d99aaa;
+
+    font-size: 20px;
+
+}
+
+/* Карточка таймера */
+
+.countdown-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 35px 20px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #f2dfe3;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 45px rgba(164, 94, 115, 0.10);
+
+}
+
+.countdown-item {
+
+    min-width: 90px;
+
+}
+
+.countdown-number {
+
+    color: #a45e73;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(35px, 8vw, 65px);
+
+    font-weight: 500;
+
+    font-variant-numeric: tabular-nums;
+
+    line-height: 1.2;
+
+}
+
+.countdown-label {
+
+    margin-top: 10px;
+
+    color: #bd8998;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+}
+
+.countdown-separator {
+
+    color: #d99aaa;
+
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+
+    margin-top: -15px;
+
+}
+
+/* Нижняя надпись */
+
+.countdown-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+}
+
+.countdown-bottom span {
+
+    color: #d99aaa;
+
+    font-size: 19px;
+
+}
+
+.countdown-bottom p {
+
+    color: #a77b85;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+}
+
+/* Кнопка назад */
+
+.countdown-back {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    color: #b77c8e;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color .3s ease;
+
+}
+
+.countdown-back:hover {
+
+    color: #8e5267;
+
+}
+
+/* Телефоны */
+
+@media (max-width: 600px) {
+
+    .countdown-page {
+
+        padding: 25px 15px;
+
+    }
+
+    .countdown-card {
+
+        gap: 5px;
+
+        padding: 30px 10px;
+
+    }
+
+    .countdown-item {
+
+        min-width: 0;
+
+        flex: 1;
+
+    }
+
+    .countdown-number {
+
+        font-size: clamp(28px, 8vw, 43px);
+
+    }
+
+    .countdown-separator {
+
+        font-size: 25px;
+
+    }
+
+    .countdown-label {
+
+        font-size: 10px;
+
+    }
+
+    .countdown-description {
+
+        font-size: 14px;
+
+    }
+
+    .countdown-bottom p {
+
+        font-size: 12px;
+
+    }
+
+}
