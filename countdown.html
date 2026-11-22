@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Особенный момент ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="countdown-page">
+
+    <main class="countdown-container">
+
+        <div class="countdown-sun">☀️</div>
+
+        <div class="countdown-kicker">
+
+            кое-что очень важное
+
+        </div>
+
+        <h1>До особенного момента...</h1>
+
+        <p class="countdown-description">
+
+            Иногда хочется остановить время,
+
+            чтобы быстрее приблизить что-то прекрасное.
+
+            <br>
+
+            И я с нетерпением жду этого момента вместе с тобой. ❤️
+
+        </p>
+
+        <div class="countdown-date">
+
+            <span>29 НОЯБРЯ 2026</span>
+
+            <span class="countdown-date-divider">♡</span>
+
+            <span>02:17</span>
+
+        </div>
+
+        <div class="countdown-card">
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="days">00</div>
+
+                <div class="countdown-label">дней</div>
+
+            </div>
+
+            <div class="countdown-separator">:</div>
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="hours">00</div>
+
+                <div class="countdown-label">часов</div>
+
+            </div>
+
+            <div class="countdown-separator">:</div>
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="minutes">00</div>
+
+                <div class="countdown-label">минут</div>
+
+            </div>
+
+            <div class="countdown-separator">:</div>
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="seconds">00</div>
+
+                <div class="countdown-label">секунд</div>
+
+            </div>
+
+        </div>
+
+        <div class="countdown-bottom">
+
+            <span>♡</span>
+
+            <p>Каждая секунда приближает нас к чему-то прекрасному</p>
+
+            <span>♡</span>
+
+        </div>
+
+        <a href="surprises.html" class="countdown-back">
+
+            ← Вернуться к сюрпризам
+
+        </a>
+
+    </main>
+
+    <script>
+
+        // 29 ноября 2026 года, 02:17 по московскому времени (UTC+3)
+
+        const targetDate = new Date("2026-11-28T23:17:00Z").getTime();
+
+        function updateCountdown() {
+
+            const now = Date.now();
+
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+
+                document.getElementById("days").textContent = "00";
+
+                document.getElementById("hours").textContent = "00";
+
+                document.getElementById("minutes").textContent = "00";
+
+                document.getElementById("seconds").textContent = "00";
+
+                document.querySelector(".countdown-container h1").textContent =
+
+                    "Этот момент настал! ❤️";
+
+                document.querySelector(".countdown-description").textContent =
+
+                    "Больше не нужно ждать. Самое время открыть что-то особенное.";
+
+                return;
+
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+
+            const minutes = Math.floor((difference / (1000 * 60)) % 60);
+
+            const seconds = Math.floor((difference / 1000) % 60);
+
+            document.getElementById("days").textContent =
+
+                String(days).padStart(2, "0");
+
+            document.getElementById("hours").textContent =
+
+                String(hours).padStart(2, "0");
+
+            document.getElementById("minutes").textContent =
+
+                String(minutes).padStart(2, "0");
+
+            document.getElementById("seconds").textContent =
+
+                String(seconds).padStart(2, "0");
+
+        }
+
+        updateCountdown();
+
+        setInterval(updateCountdown, 1000);
+
+    </script>
+
+</body>
+
+</html>
