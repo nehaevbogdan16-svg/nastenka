@@ -1277,3 +1277,238 @@ video {
     }
 
 }
+/* =================================
+
+   DARK ROMANTIC THEME — 02:17
+
+================================= */
+
+body {
+
+    background: #171116 !important;
+
+    color: #eadce1;
+
+}
+
+/* Основной фон */
+
+.page {
+
+    background:
+
+        radial-gradient(circle at 50% 10%, #38202d 0%, transparent 45%),
+
+        #171116;
+
+}
+
+/* Заголовки */
+
+.heading,
+
+.heading h1,
+
+.heading h2 {
+
+    color: #f0cbd7;
+
+}
+
+.sun {
+
+    color: #e6a9bd;
+
+}
+
+/* Коллаж */
+
+.stage {
+
+    background: transparent;
+
+}
+
+.photo {
+
+    border-color: #49313d !important;
+
+    box-shadow: 0 10px 35px #00000080 !important;
+
+}
+
+/* Видео */
+
+.video-frame {
+
+    background: #211820 !important;
+
+    border-color: #62404f !important;
+
+    box-shadow: 0 15px 50px #00000090 !important;
+
+}
+
+.video-frame video {
+
+    background: #100d10;
+
+}
+
+/* Основной текст */
+
+.note {
+
+    background: #211820;
+
+    border: 1px solid #49313d;
+
+    box-shadow: 0 15px 40px #00000045;
+
+    color: #e8d4dc;
+
+}
+
+.note p {
+
+    color: #e8d4dc;
+
+}
+
+.note .sign {
+
+    color: #e6a9bd;
+
+}
+
+/* Конверты */
+
+.envelope-back {
+
+    background: linear-gradient(145deg, #805064, #593447);
+
+}
+
+.envelope-front {
+
+    background: linear-gradient(145deg, #714457, #4d2c3c);
+
+}
+
+.envelope-flap {
+
+    background: #89596d;
+
+}
+
+.letter-paper {
+
+    background: #30232c;
+
+    border-color: #634453;
+
+    color: #f0dce4;
+
+    box-shadow: 0 5px 25px #00000050;
+
+}
+
+.envelope-label {
+
+    color: #fff0f5;
+
+}
+
+.footer {
+
+    color: #bd8b9e;
+
+}
+
+/* Счётчик */
+
+.mini-countdown {
+
+    background: #241a22;
+
+    border: 1px solid #503545;
+
+    box-shadow: 0 10px 35px #00000050;
+
+}
+
+.mini-countdown-title {
+
+    color: #e6b1c3;
+
+}
+
+.mini-countdown-timer strong {
+
+    color: #f0cbd7;
+
+}
+
+.mini-countdown-timer span {
+
+    color: #b88b9c;
+
+}
+
+.mini-countdown-timer b {
+
+    color: #bd8198;
+
+}
+
+.mini-countdown-date {
+
+    color: #bd8b9e;
+
+}
+
+/* Дополнительные декоративные элементы */
+
+a {
+
+    color: #e6a9bd;
+
+}
+
+button {
+
+    color: #f0dce4;
+
+}
+
+/* Выделение текста */
+
+::selection {
+
+    background: #89596d;
+
+    color: white;
+
+}
+
+/* Полоса прокрутки */
+
+::-webkit-scrollbar {
+
+    width: 7px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #171116;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #694355;
+
+    border-radius: 10px;
+
+}
